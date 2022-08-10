@@ -48,7 +48,6 @@ public class JwtController {
 			return ResponseEntity.status(401).body("<h1>Bad Credential</h1>");
 		}
 
-		System.out.println("NIBI KE NIBI KE PANGA");
 		UserDetails userDetails = customUserDetailsService.loadUserByUsername(username);
 		String jwt = jwtUtil.generateToken(userDetails);
 		System.out.println("----- JWT: " + jwt + " -----");
